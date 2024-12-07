@@ -2,13 +2,16 @@
 
 ## For Dagshub
 
-MLFLOW_TRACKING_URI=https://dagshub.com/sumit.joshi9818/GemPricePrediction.mlflow
-MLFLOW_TRACKING_USERNAME=sumit.joshi9818
-MLFLOW_TRACKING_PASSWORD=889b958bcb670e7d578a2fb8550aacdd485c884b
-python script.py
+MLFLOW URL = https://dagshub.com/sumit.joshi9818/MLFlow_Test.mlflow
 
+Use the following code for dagshub and mlflow
 ```bash
-export MLFLOW_TRACKING_URI=https://dagshub.com/sumit.joshi9818/GemPricePrediction.mlflow
-export MLFLOW_TRACKING_USERNAME=sumit.joshi9818
-export MLFLOW_TRACKING_PASSWORD=889b958bcb670e7d578a2fb8550aacdd485c884b
+import dagshub
+dagshub.init(repo_owner='sumit.joshi9818', repo_name='MLFlow_Test', mlflow=True)
+
+import mlflow
+with mlflow.start_run():
+  mlflow.log_param('parameter name', 'value')
+  mlflow.log_metric('metric name', 1)
+
 ```
